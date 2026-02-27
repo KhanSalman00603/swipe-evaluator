@@ -1,13 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import SwipeNavigator from "@/components/SwipeNavigator";
+import { AppProvider } from "@/context/AppContext";
+import LandingPage from "@/pages/LandingPage";
+import UploadPage from "@/pages/UploadPage";
+import VivaPage from "@/pages/VivaPage";
+import ProcessingPage from "@/pages/ProcessingPage";
+import DashboardPage from "@/pages/DashboardPage";
+import ReportPage from "@/pages/ReportPage";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <AppProvider>
+      <SwipeNavigator>
+        <LandingPage />
+        <UploadPage />
+        <VivaPage />
+        <ProcessingPage />
+        <DashboardPage />
+        <ReportPage />
+      </SwipeNavigator>
+    </AppProvider>
   );
 };
 
